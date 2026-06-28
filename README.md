@@ -87,11 +87,31 @@ node autopost.mjs --text "test" --image "https://..." --to both --dry-run
 |------|---------|
 | `--text` (or `--message`) | post body / caption |
 | `--link` | URL for a Facebook link post |
-| `--image` | **public** image URL (works for FB and IG) |
-| `--image-file` | local image path (FB only) |
-| `--to` | `fb` \| `ig` \| `both` (default: `fb`, or `both` when an image is given) |
+| `--image` | one image (local path **or** URL; any format — auto-converted/hosted) |
+| `--image-file` | local image path (alias of `--image`) |
+| `--images "a,b,c"` | **carousel** — 2–10 images (FB multi-photo + IG carousel) |
+| `--reel <mp4>` | **Reel** — video path/URL (IG Reel + FB video) |
+| `--story <img\|mp4>` | **Story** — image or video (IG only; FB has no Page Story API) |
+| `--video <mp4>` | plain video (FB video + IG reel) |
+| `--to` | `fb` \| `ig` \| `both` (default: `both`, or `fb` for text/link) |
 | `--queue <file>` | run a queue file instead of a single post |
 | `--dry-run` | validate + preview, publish nothing |
+
+### Post kinds at a glance
+| Kind | Facebook | Instagram | Notes |
+|------|----------|-----------|-------|
+| text / link | feed post | — | IG can't do text-only |
+| image | photo | feed photo | tall images get white-padded for IG feed |
+| carousel | multi-photo | carousel | 2–10 images |
+| reel / video | video | Reel | mp4; IG processes async (tool waits) |
+| story | — | Story | image or mp4; 9:16 native, no padding |
+
+Examples:
+```powershell
+node autopost.mjs --text "Cap" --images "a.png,b.png,c.png" --to both   # carousel
+node autopost.mjs --text "Cap" --reel ".\clip.mp4" --to both            # Reel + FB video
+node autopost.mjs --story ".\slide.png" --to ig                         # IG Story
+```
 
 ---
 

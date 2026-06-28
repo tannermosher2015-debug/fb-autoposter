@@ -18,5 +18,25 @@
     "text": "Limited summer special on new websites — DM us to claim your spot. #MauiBusiness",
     "image": "https://frontlinewebdesign.tech/assets/promo-summer.jpg",
     "posted": false
+  },
+  {
+    "id": "carousel-example",
+    "to": "both",
+    "text": "3 reasons your website isn't showing up on Google 👇",
+    "images": ["./content-posts/post3-quicktip/post3_slide1.png", "./content-posts/post3-quicktip/post3_slide2.png", "./content-posts/post3-quicktip/post3_slide3.png"],
+    "posted": false
+  },
+  {
+    "id": "reel-example",
+    "to": "both",
+    "text": "Built this from scratch. Zero template. 🔥",
+    "reel": "./content-posts/post1-intro/Mystory_frontline.mp4",
+    "posted": false
+  },
+  {
+    "id": "story-example",
+    "to": "ig",
+    "story": "./content-posts/post3-quicktip/post3_slide1.png",
+    "posted": false
   }
 ]
