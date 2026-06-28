@@ -1,0 +1,20 @@
+{
+  "name": "fb-autoposter",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Publish organic posts to a Facebook Page and linked Instagram via the Meta Graph API.",
+  "bin": {
+    "autopost": "autopost.mjs"
+  },
+  "scripts": {
+    "post": "node autopost.mjs",
+    "queue": "node autopost.mjs --queue posts.json"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "basic-ftp": "^5.3.1"
+  }
+}

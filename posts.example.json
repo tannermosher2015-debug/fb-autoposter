@@ -1,0 +1,22 @@
+[
+  {
+    "id": "welcome-text",
+    "to": "fb",
+    "text": "We're now posting straight from our own tool. Aloha! 🌺",
+    "posted": false
+  },
+  {
+    "id": "blog-link",
+    "to": "fb",
+    "text": "New on the blog: 5 things every Maui small business needs on its website.",
+    "link": "https://frontlinewebdesign.tech/blog/example",
+    "posted": false
+  },
+  {
+    "id": "promo-photo-both",
+    "to": "both",
+    "text": "Limited summer special on new websites — DM us to claim your spot. #MauiBusiness",
+    "image": "https://frontlinewebdesign.tech/assets/promo-summer.jpg",
+    "posted": false
+  }
+]
