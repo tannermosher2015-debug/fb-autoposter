@@ -2,3 +2,5 @@
 node_modules/
 posts.json
 *.local.json
+leads.csv
+leads-seen.json

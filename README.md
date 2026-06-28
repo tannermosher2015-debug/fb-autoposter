@@ -175,6 +175,25 @@ node autopost.mjs --text "New build!" --image "https://frontlinewebdesign.tech/w
 ```
 A `.jpg` URL that's already public is used as-is (no conversion/upload).
 
+## Pull Instant Form (lead form) submissions
+
+`pull-leads.mjs` fetches Meta Instant Form leads via the Graph API, appends them to
+`leads.csv`, and (optionally) emails each NEW one. It dedupes via `leads-seen.json`,
+so re-runs only surface new leads. Uses the same `.env` (the Page token already has
+the `leads_retrieval` scope).
+
+```powershell
+node pull-leads.mjs
+```
+
+- **Email (optional):** fill `SMTP_*` + `LEAD_TO` in `.env` (Hostinger SMTP under
+  hPanel → Emails). Without SMTP it still saves everything to `leads.csv`.
+- **First run** saves your existing lead backlog to `leads.csv` but skips emailing it
+  (so you don't get blasted) — open the CSV to see them. After that, new leads email.
+- **Automate it:** run every ~15 min via Windows Task Scheduler (Action:
+  `node C:\dev\fb-autoposter\pull-leads.mjs`).
+- `leads.csv` and `leads-seen.json` are git-ignored (they hold PII).
+
 ## Notes & gotchas
 - **Instagram needs a publicly reachable image URL** — Meta fetches it server-side.
   You can host images on any of your sites (Hostinger). Local files won't work for IG.
